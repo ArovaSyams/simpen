@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 sans: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'blues': '#022534'
+            }
         },
     },
 

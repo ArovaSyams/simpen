@@ -14,7 +14,7 @@ class MonthlyTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $monthlies = ['Iuran Rumah', 'Transport', 'Shodaqoh', 'Yemekhane'];
+        $monthlies = ['Iuran Rumah', 'Perawatan', 'Transport', 'Shodaqoh', 'Yemekhane'];
 
         foreach ($monthlies as $monthly) {
             DB::table('monthly_types')->insert([

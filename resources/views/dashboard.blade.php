@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="px-4">
 
-        <section class="flex flex-row mb-7">
+        {{-- <section class="flex flex-row mb-7">
             <div class="w-14">
                 <img src="../img/default.png" class=" rounded-full" width="100%" alt="">
             </div>
@@ -9,9 +9,9 @@
                 <p class="text-gray-500 text-sm mt-1">selamat datang</p>
                 <p class="text-xl font-semibold">{{ $user->name }}</p>
             </div>
-        </section>
+        </section> --}}
 
-        <section class="w-full h-36 bg-sky-900 rounded-2xl p-4">
+        <section class="w-full h-36 bg-blues rounded-2xl p-4 mt-4">
             <div class="justify-between flex flex-row ">
                 <p class="text-white">Balance bulan ini</p>
                 <p class="text-white">06/23</p>
@@ -39,7 +39,7 @@
 
         <section class="mt-5 flex flex-row gap-4">
             <a href="/billing" class="basis-1/3">
-                <div class=" h-24 bg-sky-900 rounded-2xl grid place-content-center ">
+                <div class=" h-24 bg-blues rounded-2xl grid place-content-center ">
 
                     <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 384 512">
                         <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -55,7 +55,7 @@
             </a>
 
             <a href="/monthly" class="basis-1/3">
-                <div class=" h-24 bg-sky-900 rounded-2xl grid place-content-center">
+                <div class=" h-24 bg-blues rounded-2xl grid place-content-center">
                     {{-- <p class="text-white text-lg">Bulanan</p> --}}
                     <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512">
                         <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -70,7 +70,7 @@
                 </div>
             </a>
             <a href="" class="basis-1/3">
-                <div class="basis-1/3 h-24 bg-sky-900 rounded-2xl grid place-content-center">
+                <div class="basis-1/3 h-24 bg-blues rounded-2xl grid place-content-center">
                     {{-- <p class="text-white text-lg">Tabun</p> --}}
                     <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 576 512">
                         <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -96,7 +96,7 @@
                 <div class="flex flex-row mt-5 justify-between">
                     <div class="flex flex-row">
                         <div class="w-14">
-                            <img src="../img/img.png" class="bg-sky-800 rounded-full p-1" width="100%" alt="">
+                            <img src="../img/img.png" class="bg-blues rounded-full p-1" width="100%" alt="">
                         </div>
                         <div class="ml-4">
                             {{-- @if ($history->bill_type_id && $history->bill_id == 1)
@@ -108,14 +108,15 @@
                                 <p class="text-xl font-semibold">Balance</p>
                             @elseif ($history->monthly_id)
                                 <p class="text-xl font-semibold">{{ $history->monthly->monthlyType->monthly_type }}</p>
-                                @elseif ($history->bill_id)
+                            @elseif ($history->bill_id)
                                 <p class="text-xl font-semibold">{{ $history->bill->billType->bill_type }}</p>
                             @endif
-                            <p class="text-sm text-gray-600">sun, 17 aug 2022</p>
+                            <p class="text-sm text-gray-600">{{ $carbon }}</p>
                         </div>
                     </div>
                     <div class="justify-items-end">
-                        <p class="font-semibold  text-2xl my-2">{{ $history->balance ? '+ ' : '- ' }} {{ $history->total }} TL</p>
+                        <p class="font-semibold  text-2xl my-2">{{ $history->balance ? '+ ' : '- ' }}
+                            {{ $history->total }} TL</p>
                     </div>
                 </div>
             @endforeach

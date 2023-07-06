@@ -7,7 +7,7 @@
         <section class="mt-6">
 
             <div id="openUangJajanBtn"
-                class="w-full h-24 border-4 border-sky-900 rounded-2xl mb-5 p-4 pt-5 flex flex-row justify-between">
+                class="w-full h-24 border-4 border-blues rounded-2xl mb-5 p-4 pt-5 flex flex-row justify-between">
                 <div>
                     <p class="text-base ">Sisa Uang Jajan <span class="text-gray-500">(balance - tagihan)</span></p>
                     <p class="text-2xl font-semibold">&#x20BA; {{ $pocketMoney->pocket_money }}</p>
@@ -15,7 +15,7 @@
 
 
                 <div class="mt-3">
-                    <svg class="fill-sky-900" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 128 512">
+                    <svg class="fill-blues" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 128 512">
                         <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <style>
                             svg {
@@ -68,7 +68,7 @@
                             </div>
                             <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                 <button type="submit"
-                                    class="inline-flex w-full justify-center rounded-md bg-sky-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 sm:ml-3 sm:w-auto">Kurangi</button>
+                                    class="inline-flex w-full justify-center rounded-md bg-blues px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 sm:ml-3 sm:w-auto">Kurangi</button>
                                 </form>
                                 <button type="button" id="closeUangJajanBtn"
                                     class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
@@ -80,7 +80,7 @@
 
             @foreach ($monthlies as $monthly)
                 <div id="openAddedAlokasiBtn{{ $monthly->id }}"
-                    class="w-full h-24 bg-sky-900 rounded-2xl mb-5 p-4 pt-5 flex flex-row justify-between">
+                    class="w-full h-24 bg-blues rounded-2xl mb-5 p-4 pt-5 flex flex-row justify-between">
                     <div>
                         <p class="text-base text-white ">{{ $monthly->monthlyType->monthly_type }}</p>
                         <p class="text-2xl font-semibold text-white">&#x20BA; {{ $monthly->nominal }}</p>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                     <button type="submit"
-                                        class="inline-flex w-full justify-center rounded-md bg-sky-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 sm:ml-3 sm:w-auto">Kurangi</button>
+                                        class="inline-flex w-full justify-center rounded-md bg-blues px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 sm:ml-3 sm:w-auto">Kurangi</button>
                                     </form>
                                     <button type="button" id="closeAddedAlokasiBtn{{ $monthly->id }}"
                                         class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
@@ -155,7 +155,7 @@
 
 
             <button id="addAlokasiBtn" class="w-full h-16 border border-gray-400 rounded-2xl mb-5 flex flex-row">
-                <svg class="m-4" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
+                <svg class="m-4" class="text-blues" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
                     <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <style>
                         svg {
@@ -214,7 +214,7 @@
                             </div>
                             <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                 <button type="submit"
-                                    class="inline-flex w-full justify-center rounded-md bg-sky-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-600 sm:ml-3 sm:w-auto">Tambahkan</button>
+                                    class="inline-flex w-full justify-center rounded-md bg-blues px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-600 sm:ml-3 sm:w-auto">Tambahkan</button>
                                 </form>
                                 <button type="button" id="closeAlokasiBtn"
                                     class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
@@ -266,7 +266,7 @@
                             </div>
                             <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                 <button type="submit"
-                                    class="inline-flex w-full justify-center rounded-md bg-sky-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-600 sm:ml-3 sm:w-auto">Tambahkan</button>
+                                    class="inline-flex w-full justify-center rounded-md bg-blues px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-600 sm:ml-3 sm:w-auto">Tambahkan</button>
                                 </form>
                                 <button type="button" id="closeEditAlokasiBtn"
                                     class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>

@@ -91,14 +91,13 @@ class BalanceController extends Controller
      */
     public function update(UpdateBalanceRequest $request, Balance $balance)
     {
-        // dd($request->billId1);
+        dd($request->billId5);
+        dd(User::find(Auth::user()->id)->bill->where('bill_type', $request->billId1));
         $balances = User::find(Auth::user()->id)->balance->pluck('balance')->first();
         // $pocketMoney = User::find(Auth::user()->id)->balance->pluck('pocket_money')->first();
 
         
         $updatedBalance = $balances - $request->storeBill1 - $request->storeBill2 - $request->storeBill3 - $request->storeBill4 - $request->storeBill5 - $request->storeBill6;
-        // $updatedPocketMoney = $pocketMoney - $request->storeBill2 - $request->storeBill3 - $request->storeBill4 - $request->storeBill5 -$request->storeBill6;
-        $totalBills = $request->storeBill1 + $request->storeBill2 + $request->storeBill3 + $request->storeBill4 + $request->storeBill5 + $request->storeBill6;
 
         if($request->storeBill1) {
             $statusBill = User::find(Auth::user()->id)->bill->where('id', $request->billId1)->first();
@@ -135,12 +134,49 @@ class BalanceController extends Controller
         Balance::find($balance->id)->update([
             'balance' => $updatedBalance
         ]);
-
-        History::create([
-            'user_id' => Auth::user()->id,
-            'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 1)->pluck('bill_type_id')->first(),
-            'total' => $totalBills
-        ]);
+        
+        if ($request->storeBill1) {
+            History::create([
+                'user_id' => Auth::user()->id,
+                'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 1)->pluck('bill_type_id')->first(),
+                'total' => $request->storeBill1
+            ]);
+        }
+        if ($request->storeBill2) {
+            History::create([
+                'user_id' => Auth::user()->id,
+                'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 2)->pluck('bill_type_id')->first(),
+                'total' => $request->storeBill2
+            ]);    
+        }
+        if ($request->storeBill3) {
+            History::create([
+                'user_id' => Auth::user()->id,
+                'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 3)->pluck('bill_type_id')->first(),
+                'total' => $request->storeBill3
+            ]);     
+        }
+        if ($request->storeBill4) {
+            History::create([
+                'user_id' => Auth::user()->id,
+                'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 4)->pluck('bill_type_id')->first(),
+                'total' => $request->storeBill4
+            ]);   
+        }
+        if ($request->storeBill5) {
+            History::create([
+                'user_id' => Auth::user()->id,
+                'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 5)->pluck('bill_type_id')->first(),
+                'total' => $request->storeBill5
+            ]);      
+        }
+        if ($request->storeBill6) {
+            History::create([
+                'user_id' => Auth::user()->id,
+                'bill_id' => User::find(Auth::user()->id)->bill->where('bill_type_id', 6)->pluck('bill_type_id')->first(),
+                'total' => $request->storeBill6
+            ]);      
+        }
 
         return redirect('dashboard');
     }

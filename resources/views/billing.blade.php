@@ -7,7 +7,7 @@
             @foreach ($billTypes as $billType)
                 <div class="flex flex-row mb-5 rounded-2xl">
                     <div id="modalBtn{{ $billType->id }}"
-                        class=" basis-4/5 w-full h-24 bg-sky-900 rounded-l-2xl  p-4 flex flex-row justify-between">
+                        class=" basis-4/5 w-full h-24 bg-blues rounded-l-2xl  p-4 flex flex-row justify-between">
 
                         <div class="flex flex-row">
                             <div class="w-10">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="pl-0 ml-0 bg-sky-900 basis-1/5 rounded-r-2xl border-0 grid place-content-center">
+                    <div class="pl-0 ml-0 bg-blues basis-1/5 rounded-r-2xl border-0 grid place-content-center">
 
                         <label for="storeBill{{ $billType->id }}">
                             <svg class="fill-white" id="billCheck{{ $billType->id }}" xmlns="http://www.w3.org/2000/svg"
